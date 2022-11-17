@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "snzgJP1+8rEeZfan3So9ddRwXKCAFya5l2YfYwEfbc2y+wqZUS2H7RGUT6KfeU5Ir4VmNawRAGFuoxbwtWoMgA==",
+  "success": true,
+  "projectFilePath": "C:\\Repos\\CO566-Mobile\\AssignmentTrackerApp\\AssignmentTrackerApp\\AssignmentTrackerApp\\AssignmentTrackerApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Leighton\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Leighton\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\Leighton\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\Leighton\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
+    "C:\\Users\\Leighton\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512"
+  ],
+  "logs": []
+}

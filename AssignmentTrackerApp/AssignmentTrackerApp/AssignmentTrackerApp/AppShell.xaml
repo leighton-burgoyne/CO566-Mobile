@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms" 
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:views="clr-namespace:AssignmentTrackerApp.Views"
+       Title="AssignmentTrackerApp"
+       x:Class="AssignmentTrackerApp.AppShell">
+    
+    <TabBar>
+        <ShellContent Title="Home" Icon="icon_home.png" ContentTemplate="{DataTemplate views:HomePage}" />
+        <ShellContent Title="Assignments" Icon="icon_assignments.png" ContentTemplate="{DataTemplate views:AssignmentsPage}" />
+        <ShellContent Title="Notifications" Icon="icon_notifications.png" ContentTemplate="{DataTemplate views:NotificationsPage}" />
+        <ShellContent Title="Settings" Icon="icon_settings.png" ContentTemplate="{DataTemplate views:SettingsPage}" />
+    </TabBar>
+</Shell>
