@@ -5,6 +5,44 @@
              Title="Settings">
     <ContentPage.Content>
         <StackLayout Margin="20">
+            <Grid VerticalOptions="Start" RowSpacing="0.5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" VerticalOptions="Start" Text="Notifications" FontSize="Large" FontAttributes="Bold" TextColor="Black"></Label>
+                <Label Grid.Row="1" Grid.Column="0" VerticalOptions="Start" Text="All Notifications" FontSize="Medium"></Label>
+                <Switch Grid.Row="1" Grid.Column="1" VerticalOptions="Start" x:Name="swAllNotifications" />
+                <Label Grid.Row="2" Grid.Column="0" Text="Deadline Alerts" FontSize="Medium"></Label>
+                <Switch Grid.Row="2" Grid.Column="1" VerticalOptions="Start" x:Name="swDeadlineAlerts" />
+                <Label Grid.Row="3" Grid.Column="0" VerticalOptions="Start" Text="Event Alerts" FontSize="Medium"></Label>
+                <Switch Grid.Row="3" Grid.Column="1" VerticalOptions="Start" x:Name="swEventAlerts" />
+                <Label Grid.Row="4" Grid.Column="0" VerticalOptions="Start" Text="Promotional" FontSize="Large" FontAttributes="Bold" TextColor="Black"></Label>
+                <Label Grid.Row="5" Grid.Column="0" VerticalOptions="Start" Text="Tips Newsletter" FontSize="Medium"></Label>
+                <Switch Grid.Row="5" Grid.Column="1" VerticalOptions="Start" x:Name="swTipsTricksNewsletter" />
+                <Label Grid.Row="6" Grid.Column="0" VerticalOptions="Start" Text="Emails from Developer" FontSize="Medium"></Label>
+                <Switch Grid.Row="6" Grid.Column="1" VerticalOptions="Start" x:Name="swDeveloperEmails" />
+                <Label Grid.Row="7" Grid.Column="0" VerticalOptions="Start" Text="Accessibility" FontSize="Large" FontAttributes="Bold" TextColor="Black"></Label>
+                <Label Grid.Row="8" Grid.Column="0" VerticalOptions="Start" Text="Screen Reader" FontSize="Medium"></Label>
+                <Switch Grid.Row="8" Grid.Column="1" VerticalOptions="Start" x:Name="swScreenReader" />
+                <Label Grid.Row="9" Grid.Column="0" VerticalOptions="Start" Text="Screen Overlays" FontSize="Medium"></Label>
+                <Switch Grid.Row="9" Grid.Column="1" VerticalOptions="Start" x:Name="swScreenOverlays" />
+                <Label Grid.Row="10" Grid.Column="0" VerticalOptions="Start" Text="Bigger Font Size" FontSize="Medium"></Label>
+                <Switch Grid.Row="10" Grid.Column="1" VerticalOptions="Start" x:Name="swBiggerFontSize" />
+                <Label Grid.Row="11" Grid.Column="0" VerticalOptions="Start" Text="Personalisation" FontSize="Large" FontAttributes="Bold" TextColor="Black"></Label>
+                <Label Grid.Row="12" Grid.Column="0" VerticalOptions="Start" Text="First Name" FontSize="Medium"></Label>
+                <Entry Grid.Row="12" Grid.Column="1" VerticalOptions="Fill" Placeholder="Enter First Name" />
+                <Label Grid.Row="13" Grid.Column="0" VerticalOptions="Start" Text="Overlay Colour" FontSize="Medium"></Label>
+                <Picker Grid.Row="13" Grid.Column="1" VerticalOptions="Start" Title="Select Colour">
+                    <Picker.Items>
+                        <x:String>Blue</x:String>
+                        <x:String>Red</x:String>
+                        <x:String>Yellow</x:String>
+                        <x:String>Green</x:String>
+                    </Picker.Items>
+                </Picker>
+            </Grid>
+            <Label Text="Created by Leighton Burgoyne" FontSize="Small" HorizontalTextAlignment="Center"/>
+            <Label Text="Build 01 (24/11/2022)" FontSize="Small" HorizontalTextAlignment="Center"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

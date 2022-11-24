@@ -5,6 +5,10 @@
              Title="Home">
     <ContentPage.Content>
         <StackLayout Margin="20">
+            <Label Text="Hey Leighton! &#x1F44B;" FontSize="28" HorizontalTextAlignment="Center" FontAttributes="Bold" TextColor="Black" />
+            <Label Text="Monday, 4 November 2022" FontSize="Medium" HorizontalTextAlignment="Center" FontAttributes="None" TextColor="Black" />
+            <SearchBar Placeholder="Search items..." Scale="1.12" />
+            <Label Text="No Assignments" FontSize="15" HorizontalTextAlignment="Center"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
