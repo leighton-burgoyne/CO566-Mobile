@@ -1,14 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:calendar="clr-namespace:Syncfusion.SfCalendar.XForms;assembly=Syncfusion.SfCalendar.XForms"
              x:Class="AssignmentTrackerApp.Views.HomePage"
-             Title="Home">
+             xmlns:local="clr-namespace:AssignmentTrackerApp.Views"
+             Title="Assignment Tracker">
     <ContentPage.Content>
         <StackLayout Margin="20">
-            <Label Text="Hey Leighton! &#x1F44B;" FontSize="28" HorizontalTextAlignment="Center" FontAttributes="Bold" TextColor="Black" />
-            <Label Text="Monday, 4 November 2022" FontSize="Medium" HorizontalTextAlignment="Center" FontAttributes="None" TextColor="Black" />
-            <SearchBar Placeholder="Search items..." Scale="1.12" />
-            <Label Text="No Assignments" FontSize="15" HorizontalTextAlignment="Center"/>
+            <!--<Label Text="{Binding Source={x:Reference firstNameEntry},
+                              Path=Text,
+                              StringFormat='Hey, {0} &#x1F44B;'}" />-->
+            <Label Text="Good Morning! &#x1F305;" FontSize="28" HorizontalTextAlignment="Center" FontAttributes="Bold" TextColor="Black" />
+            
+            
+            
+            <Label Text="Monday, 4 November 2022" FontSize="Medium" HorizontalTextAlignment="Center" FontAttributes="None" TextColor="Black" AutomationProperties.Name="Current Date"/>
+            <SearchBar Placeholder="Search Assignments..." Scale="1.12" PlaceholderColor="Black" />
+            <Label Text=""></Label>
+            <calendar:SfCalendar x:Name="calendar" ShowInlineEvents="true" DataSource="{Binding AssignmentEvents}">
+                <calendar:SfCalendar.BindingContext>
+                    <local:AssignmentDetailsPage/>
+                </calendar:SfCalendar.BindingContext>
+            </calendar:SfCalendar>
+            <!--<calendar:SfCalendar x:Name="calendar" ShowInlineEvents="True" D>
+                <calendar:SfCalendar.MonthViewSettings>
+                    <calendar:MonthViewSettings>
+                        <calendar:MonthViewSettings.InlineItemTemplate>
+                            <DataTemplate>
+                                <Button BackgroundColor="Purple" Text="{Binding Subject}" TextColor="White" />
+                            </DataTemplate>
+                        </calendar:MonthViewSettings.InlineItemTemplate>
+                    </calendar:MonthViewSettings>
+                </calendar:SfCalendar.MonthViewSettings>
+            </calendar:SfCalendar>-->
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

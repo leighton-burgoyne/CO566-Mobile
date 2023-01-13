@@ -10,6 +10,8 @@ namespace AssignmentTrackerApp
 
         public App()
         {
+            //Register Syncfusion license
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("OTI5MTQ5QDMyMzAyZTM0MmUzMFg3QWVOZzBTMll2UDhuSnN6VU9BZnZnNVdqQTBRb0pmMFBzU25Rd2ttSHM9");
             InitializeComponent();
             MainPage = new AppShell();
         }

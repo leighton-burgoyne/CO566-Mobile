@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -6,13 +6,31 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />  
-    <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
+    <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="20.4.0.41" />
+    <PackageReference Include="Syncfusion.Xamarin.Cards" Version="20.4.0.41" />
+    <PackageReference Include="Syncfusion.Xamarin.Core" Version="20.4.0.41" />
+    <PackageReference Include="Syncfusion.Xamarin.Expander" Version="20.4.0.41" />
+    <PackageReference Include="Syncfusion.Xamarin.SfBadgeView" Version="20.4.0.41" />
+    <PackageReference Include="Syncfusion.Xamarin.SfCalendar" Version="20.4.0.41" />
+    <PackageReference Include="Syncfusion.Xamarin.SfChart" Version="20.4.0.41" />
+    <PackageReference Include="Syncfusion.Xamarin.SfComboBox" Version="20.4.0.41" />
+    <PackageReference Include="Syncfusion.Xamarin.SfListView" Version="20.4.0.41" />
+    <PackageReference Include="Syncfusion.Xamarin.SfPicker" Version="20.4.0.41" />
+    <PackageReference Include="Syncfusion.Xamarin.SfPullToRefresh" Version="20.4.0.41" />
+    <PackageReference Include="Syncfusion.Xamarin.SfRadialMenu" Version="20.4.0.41" />
+    <PackageReference Include="Syncfusion.Xamarin.SfSchedule" Version="20.4.0.41" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2545" />  
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.4" />  
+    <PackageReference Include="XCalendar.Forms" Version="4.2.1" />
   </ItemGroup>
 
   <ItemGroup>
     <Compile Update="Views\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\AssignmentDetailsPage.xaml.cs">
+      <DependentUpon>AssignmentDetailsPage.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\NotificationsPage.xaml.cs">
       <DependentUpon>NotificationsPage.xaml</DependentUpon>
@@ -24,6 +42,9 @@
 
   <ItemGroup>
     <EmbeddedResource Update="Views\AssignmentsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\AssignmentDetailsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\SettingsPage.xaml">

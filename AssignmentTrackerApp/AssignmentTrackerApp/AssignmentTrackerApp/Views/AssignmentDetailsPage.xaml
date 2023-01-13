@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
+xmlns:ListCollection="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+xmlns:chipgroup="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AssignmentTrackerApp.Views.AssignmentDetailsPage"
+             Title="Assignment Details">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Delete" Clicked="OnDeleteButtonClicked">
+            <ToolbarItem.IconImageSource>
+                <OnPlatform x:TypeArguments="ImageSource">
+                    <On Platform="Android"
+                        Value="icon_trash.png" />
+                </OnPlatform>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Margin="20">
+            <Grid VerticalOptions="Start" RowSpacing="0" ColumnSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="1" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Start" Text="Title" FontSize="Medium" TextColor="Black"></Label>
+                <Entry x:Name="TitleField" Grid.Row="1" Grid.Column="1" VerticalOptions="Center" Text="{Binding Title}" />
+                <Label Grid.Row="2" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Start" Text="Due Date" FontSize="Medium" TextColor="Black"></Label>
+                <DatePicker x:Name="DueDateField" Date="{Binding DueDate}" Grid.Row="2" Grid.Column="1" VerticalOptions="Center" Format="dd/MM/yyyy"></DatePicker>
+                <Label Grid.Row="3" Grid.Column="0" VerticalOptions="Center" Text="Priority" FontSize="Medium" TextColor="Black"></Label>
+                <chipgroup:SfRadioGroup x:Name="priorityRadio" Grid.Row="3" Grid.Column="1" Orientation="Horizontal">
+                    <chipgroup:SfRadioButton Text="Low" IsChecked="{Binding LowPriority}"/>
+                    <chipgroup:SfRadioButton Text="Medium" IsChecked="{Binding MediumPriority}"/>
+                    <chipgroup:SfRadioButton Text="High" IsChecked="{Binding HighPriority}"/>
+                </chipgroup:SfRadioGroup>
+                <Label Grid.Row="4" Grid.Column="0" VerticalOptions="Center" Text="Category" FontSize="Medium" TextColor="Black"></Label>
+                <chipgroup:SfRadioGroup x:Name="categoryRadio" Grid.Row="4" Grid.Column="1" Orientation="Horizontal">
+                    <chipgroup:SfRadioButton Text="Assignment" IsChecked="{Binding AssignmentCategory}"/>
+                    <chipgroup:SfRadioButton Text="Class Task" IsChecked="{Binding ClassTaskCategory}"/>
+                    <chipgroup:SfRadioButton Text="Revision" IsChecked="{Binding RevisionCategory}"/>
+                </chipgroup:SfRadioGroup>
+                <Label Grid.Row="5" Grid.Column="0" VerticalOptions="Center" Text="Module" FontSize="Medium" TextColor="Black"></Label>
+                <combobox:SfComboBox SelectedItem="{Binding Module}" Grid.Row="5" Grid.Column="1">
+                    <combobox:SfComboBox.ComboBoxSource>
+                        <ListCollection:List x:TypeArguments="x:String">
+                            <x:String>CO558: Database Design</x:String>
+                            <x:String>CO550: Web Applications</x:String>
+                            <x:String>CO566: Mobile Systems</x:String>
+                            <x:String>CO567: Object Oriented Systems</x:String>
+                        </ListCollection:List>
+                    </combobox:SfComboBox.ComboBoxSource>
+                </combobox:SfComboBox>
+                <Label Grid.Row="6" Grid.Column="0" VerticalOptions="Center" Text="Notes" FontSize="Medium" TextColor="Black"></Label>
+                <Editor Text="{Binding Notes}" Grid.Row="6" Grid.Column="1" VerticalOptions="Center"></Editor>
+                <Label Grid.Row="7" Grid.Column="0" VerticalOptions="Center" Text="Status" FontSize="Medium" TextColor="Black"></Label>
+                <chipgroup:SfRadioGroup x:Name="statusRadio" Grid.Row="7" Grid.Column="1" Orientation="Horizontal">
+                    <chipgroup:SfRadioButton Text="Incomplete" IsChecked="{Binding Incomplete}"/>
+                    <chipgroup:SfRadioButton Text="In Progress" IsChecked="{Binding InProgress}"/>
+                    <chipgroup:SfRadioButton Text="Done" IsChecked="{Binding Completed}"/>
+                </chipgroup:SfRadioGroup>
+            </Grid>
+            <chipgroup:SfButton Text="Update Assignment" FontSize="16" BackgroundColor="DodgerBlue" Clicked="OnCreateButtonClicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

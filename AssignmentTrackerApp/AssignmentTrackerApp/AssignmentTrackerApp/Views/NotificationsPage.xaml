@@ -1,10 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+xmlns:button="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AssignmentTrackerApp.Views.NotificationsPage"
              Title="Notifications">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Do Not Disturb" Clicked="OnMuteButtonClicked">
+            <ToolbarItem.IconImageSource>
+                <OnPlatform x:TypeArguments="ImageSource">
+                    <On Platform="Android"
+                        Value="icon_donotdisturb.png" />
+                </OnPlatform>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout Margin="20">
+            <Label VerticalOptions="Start" Text="Deadlines in the Next Week" FontSize="Large" FontAttributes="Bold" TextColor="Black"></Label>
+            <Label VerticalOptions="Start" Text="Later" FontSize="Large" FontAttributes="Bold" TextColor="Black"></Label>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

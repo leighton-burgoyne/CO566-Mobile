@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AssignmentTrackerApp.Helpers;
+using AssignmentTrackerApp.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +17,11 @@ namespace AssignmentTrackerApp.Views
         public NotificationsPage()
         {
             InitializeComponent();
+        }
+
+        public void OnMuteButtonClicked(object sender, EventArgs e)
+        {
+            DependencyService.Get<IAppSettingsHelper>().OpenAppSettings();
         }
     }
 }

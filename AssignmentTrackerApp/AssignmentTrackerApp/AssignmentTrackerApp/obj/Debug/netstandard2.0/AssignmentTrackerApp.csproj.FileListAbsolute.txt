@@ -17,3 +17,4 @@ C:\Repos\CO566-Mobile\AssignmentTrackerApp\AssignmentTrackerApp\AssignmentTracke
 C:\Repos\CO566-Mobile\AssignmentTrackerApp\AssignmentTrackerApp\AssignmentTrackerApp\obj\Debug\netstandard2.0\Views\HomePage.xaml.g.cs
 C:\Repos\CO566-Mobile\AssignmentTrackerApp\AssignmentTrackerApp\AssignmentTrackerApp\obj\Debug\netstandard2.0\Views\NotificationsPage.xaml.g.cs
 C:\Repos\CO566-Mobile\AssignmentTrackerApp\AssignmentTrackerApp\AssignmentTrackerApp\obj\Debug\netstandard2.0\Views\SettingsPage.xaml.g.cs
+C:\Repos\CO566-Mobile\AssignmentTrackerApp\AssignmentTrackerApp\AssignmentTrackerApp\obj\Debug\netstandard2.0\Views\AssignmentDetailsPage.xaml.g.cs

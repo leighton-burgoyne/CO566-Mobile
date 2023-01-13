@@ -1,4 +1,17 @@
-﻿using System;
+using Syncfusion.XForms.iOS.BadgeView;
+using Syncfusion.ListView.XForms.iOS;
+using Syncfusion.XForms.iOS.Cards;
+using Syncfusion.XForms.iOS.ComboBox;
+using Syncfusion.XForms.iOS.TextInputLayout;
+using Syncfusion.XForms.Pickers.iOS;
+using Syncfusion.RangeNavigator.XForms.iOS;
+using Syncfusion.SfRadialMenu.XForms.iOS;
+using Syncfusion.XForms.iOS.Buttons;
+using Syncfusion.XForms.iOS.Expander;
+using Syncfusion.SfSchedule.XForms.iOS;
+using Syncfusion.SfPullToRefresh.XForms.iOS;
+using Syncfusion.SfCalendar.XForms.iOS;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -22,7 +35,22 @@ namespace AssignmentTrackerApp.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-            global::Xamarin.Forms.Forms.Init();
+global::Xamarin.Forms.Forms.Init();
+SfRadioButtonRenderer.Init();
+SfBadgeViewRenderer.Init();
+SfSwitchRenderer.Init();
+SfListViewRenderer.Init();
+SfCardViewRenderer.Init();
+SfComboBoxRenderer.Init();
+SfTextInputLayoutRenderer.Init();
+SfDatePickerRenderer.Init();
+SfRangeNavigatorRenderer.Init();
+SfRadialMenuRenderer.Init();
+SfButtonRenderer.Init();
+SfExpanderRenderer.Init();
+SfScheduleRenderer.Init();
+SfPullToRefreshRenderer.Init();
+SfCalendarRenderer.Init();
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

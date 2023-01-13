@@ -1,20 +1,50 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+xmlns:listview="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+xmlns:radialMenu="clr-namespace:Syncfusion.SfRadialMenu.XForms;assembly=Syncfusion.SfRadialMenu.XForms"
+xmlns:button="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+xmlns:expander="clr-namespace:Syncfusion.XForms.Expander;assembly=Syncfusion.Expander.XForms"
+xmlns:schedule="clr-namespace:Syncfusion.SfSchedule.XForms;assembly=Syncfusion.SfSchedule.XForms"
+xmlns:pulltorefresh="clr-namespace:Syncfusion.SfPullToRefresh.XForms;assembly=Syncfusion.SfPullToRefresh.XForms"
+xmlns:calendar="clr-namespace:Syncfusion.SfCalendar.XForms;assembly=Syncfusion.SfCalendar.XForms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AssignmentTrackerApp.Views.AssignmentsPage"
              Title="Assignments">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="New" Clicked="OnNewButtonClicked">
+            <ToolbarItem.IconImageSource>
+                <OnPlatform x:TypeArguments="ImageSource">
+                    <On Platform="Android"
+                        Value="icon_new.png" />
+                </OnPlatform>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout Margin="20">
-            <Editor x:Name="editor"
-                    Placeholder="Enter your Assignment"
-                    HeightRequest="100" />
-            <Grid ColumnDefinitions="*,*">
-                <Button Text="Save"
-                        Clicked="OnSaveButtonClicked" />
-                <Button Grid.Column="1" 
-                        Text="Delete"
-                        Clicked="OnDeleteButtonClicked" />
-            </Grid>
+            <listview:SfListView x:Name="listView" ItemTapped="OnAssignmentSelected" AutoFitMode="DynamicHeight">
+                <listview:SfListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Spacing="5" Padding="5">
+                                <Label Text="{Binding Title}" FontAttributes="Bold" TextColor="Black" FontSize="18" VerticalTextAlignment="Center"></Label>
+                                <Label Text="{Binding DueDate}" FontSize="15" TextColor="Black" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand"></Label>
+                                <Label Text="{Binding Module}" FontSize="15" TextColor="Black" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand"></Label>
+                                <Label Text="Category: Assignment" FontSize="15" TextColor="Black" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" IsVisible="{Binding AssignmentCategory}"></Label>
+                                <Label Text="Category: Class Task" FontSize="15" TextColor="Black" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" IsVisible="{Binding ClassTaskCategory}"></Label>
+                                <Label Text="Category: Revision" FontSize="15" TextColor="Black" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" IsVisible="{Binding RevisionCategory}"></Label>
+                                <Label Text="Priority: Low" FontSize="15" TextColor="Green" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" IsVisible="{Binding LowPriority}"></Label>
+                                <Label Text="Priority: Medium" FontSize="15" TextColor="Orange" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" IsVisible="{Binding MediumPriority}"></Label>
+                                <Label Text="Priority: High" FontSize="15" TextColor="Red" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" IsVisible="{Binding HighPriority}"></Label>
+                                <Image Source="Badge_Incomplete.png" HeightRequest="22" VerticalOptions="Center" HorizontalOptions="Start" IsVisible="{Binding Incomplete}"></Image>
+                                <Image Source="Badge_InProgress.png" HeightRequest="22" VerticalOptions="Center" HorizontalOptions="Start" IsVisible="{Binding InProgress}"></Image>
+                                <Image Source="Badge_Complete.png" HeightRequest="22" VerticalOptions="Center" HorizontalOptions="Start" IsVisible="{Binding Completed}"></Image>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </listview:SfListView.ItemTemplate>  
+            </listview:SfListView>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
